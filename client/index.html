@@ -7,6 +7,8 @@
 
     <!-- dependencies -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="scripts/xss-filters.min.js"></script>
     <script>
       // YOU DO NOT NEED TO EDIT THIS CODE
       if (!/(&|\?)username=/.test(window.location.search)) {
@@ -25,8 +27,17 @@
   <body>
     <div id="main">
       <h1>chatterbox</h1>
+      <button id="refresh">Refresh</button>
       <!-- Your HTML goes here! -->
-    </div>
+      <div id="rooms">
+        Room:
+        <select id="roomSelect">
+        </select>
+      </div>
+    <form action="#" id="send" method="post">
+      <input type="text" name="message" id="message"/>
+      <input type="submit" name="messagebutton" class="messagebutton"/>
+    </form>
     <div id="chats"></div>
   </body>
 </html>
